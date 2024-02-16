@@ -63,11 +63,15 @@
       }
 
       .boxing-sisters {
+        border: 2px outset #222831;
+        color: #222831;
+        font-family: Arial, Helvetica, sans-serif;
         background-color: rgb(255, 246, 236);
         border-radius: 4px;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
         transition: all 100ms ease-in-out;
-        padding: 8px;
+        padding: 8px 10px;
+        text-decoration: none;
       }
 
       .boxing-sisters:hover {
@@ -91,11 +95,54 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
+
+      .dark-theme {
+        background: linear-gradient(
+          109.6deg,
+          rgb(36, 45, 57) 11.2%,
+          rgb(16, 37, 60) 51.2%,
+          rgb(0, 0, 0) 98.6%
+        );
+        color: rgb(255, 246, 236);
+      }
+
+      .dark-theme .container {
+        border: 2px solid rgb(255, 246, 236);
+      }
+
+      .dark-theme a {
+        color: #d59bf6;
+      }
+
+      .dark-theme .dark {
+        color: #222831;
+        background-color: rgb(255, 246, 236);
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: none;
+      }
+
+      .dark-theme .dark:hover {
+        opacity: 0.8;
+        background-color: #222831;
+        color: rgb(255, 246, 236);
+        cursor: pointer;
+      }
+
+      .dark-theme .boxing-sisters {
+        color: #222831;
+      }
+
+      .dark-theme .boxing-sisters:hover {
+        background-color: #222831;
+        color: rgb(255, 246, 236);
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <button class="dark">Dark theme</button>
+      <button class="dark">Toggle theme</button>
       <h1>Boxing 🥊</h1>
       <h2>Combat sport and martial art</h2>
       <img
@@ -131,7 +178,12 @@
         is one of the oldest and most popular combat sports in the world, with a
         rich history dating back thousands of years.
       </p>
-      <button class="boxing-sisters">Learn to box</button>
+      <a
+        href="https://boxingsisters.com/"
+        target="_blank"
+        class="boxing-sisters"
+        >Learn to box</a
+      >
       <footer>
         <a href="https://github.com/Liandermans/boxing-page" target="_blank"
           >Open-source code</a
@@ -139,5 +191,14 @@
         by Lianne de Winter
       </footer>
     </div>
+    <script>
+      function toggleDarkTheme() {
+        let body = document.querySelector("body");
+        body.classList.toggle("dark-theme");
+      }
+
+      let button = document.querySelector(".dark");
+      button.addEventListener("click", toggleDarkTheme);
+    </script>
   </body>
 </html>
