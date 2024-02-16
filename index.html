@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My hobby - boxing 🥊</title>
+    <title>Boxing 🥊 | SheCodes Basics Add-on</title>
     <style>
       body {
         background: radial-gradient(
@@ -15,18 +15,23 @@
       }
 
       h1 {
-        font-size: 2.5em;
+        margin-block-start: 0.4em;
+        margin-block-end: 0.4em;
       }
 
       h2 {
-        font-size: 1.8em;
-        margin-bottom: 25px;
+        margin-block-end: 1.2em;
       }
 
       img {
         width: 100%;
         height: 100%;
         border-radius: 10px;
+        transition: all 200ms ease-in-out;
+      }
+
+      img:hover {
+        transform: scale(1.5);
       }
 
       p {
@@ -34,7 +39,9 @@
       }
 
       footer {
-        margin-top: 40px;
+        text-align: center;
+        margin: 20px auto;
+        font-size: 13px;
       }
 
       .container {
@@ -44,10 +51,12 @@
         margin: 0 auto;
         padding: 20px;
         text-align: center;
-        max-width: 600px;
+        max-width: 500px;
       }
 
       .dark {
+        display: block;
+        margin: 30px auto;
         font-size: 15px;
         background-color: #222831;
         color: rgb(255, 246, 236);
@@ -63,6 +72,10 @@
       }
 
       .boxing-sisters {
+        margin: 30px auto;
+      }
+
+      .boxing-sisters a {
         border: 2px outset #222831;
         color: #222831;
         background-color: rgb(255, 246, 236);
@@ -73,20 +86,15 @@
         text-decoration: none;
       }
 
-      .boxing-sisters:hover {
+      .boxing-sisters a:hover {
         background-color: #222831;
         color: rgb(255, 246, 236);
         cursor: pointer;
       }
 
       .picture-1 {
-        width: 300px;
-        transition: all 200ms ease-in-out;
-        margin-bottom: 10px;
-      }
-
-      .picture-1:hover {
-        transform: scale(1.2);
+        width: 200px;
+        margin-bottom: 8px;
       }
 
       .image-gallery {
@@ -128,11 +136,11 @@
         cursor: pointer;
       }
 
-      .dark-theme .boxing-sisters {
+      .dark-theme .boxing-sisters a {
         color: #222831;
       }
 
-      .dark-theme .boxing-sisters:hover {
+      .dark-theme .boxing-sisters a:hover {
         background-color: #222831;
         color: rgb(255, 246, 236);
         cursor: pointer;
@@ -140,8 +148,8 @@
     </style>
   </head>
   <body>
+    <button class="dark">Toggle theme</button>
     <div class="container">
-      <button class="dark">Toggle theme</button>
       <h1>Boxing 🥊</h1>
       <h2>Combat sport and martial art</h2>
       <img
@@ -177,19 +185,18 @@
         is one of the oldest and most popular combat sports in the world, with a
         rich history dating back thousands of years.
       </p>
-      <a
-        href="https://boxingsisters.com/"
-        target="_blank"
-        class="boxing-sisters"
-        >Learn to box</a
-      >
-      <footer>
-        <a href="https://github.com/Liandermans/boxing-page" target="_blank"
-          >Open-source code</a
+      <div class="boxing-sisters">
+        <a href="https://boxingsisters.com/" target="_blank"
+          >Learn how to box</a
         >
-        by Lianne de Winter
-      </footer>
+      </div>
     </div>
+    <footer>
+      <a href="https://github.com/Liandermans/boxing-page" target="_blank"
+        >Open-source code</a
+      >
+      by Lianne de Winter
+    </footer>
     <script>
       function toggleDarkTheme() {
         let body = document.querySelector("body");
